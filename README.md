@@ -28,9 +28,18 @@ In the step of counting the word frequency, we will get the word frequency of al
 
 #### Support Vector Machine (SVM) and Naive Bayes Algorithm
 -> Data is split into 70% for training 30% for testing. The training dataset is the sample dataset for learning, while the test dataset is the sample dataset for performance evaluation. The machine learning models implemented in this project are SVM and Naïve Bayes. The parameters of the algorithms were manually adjusted to achieve a better performance.
+
 -> After applying the SVM and Naive Bayes, we can get the results of each model. The accuracy of the SVM model is 86%
+
 -> The SVM model works better at predicting reviews with a positive sentiment. This difference can be observed from the above classification report where the recall for the labels ‘Negative’ and ‘Neutral’ is very less compared to ‘Positive.’ The reason is that the dataset is imbalanced with most of the comments as positive.
+
 ->  The accuracy of the Naïve Bayes model is 78%; the confusion matrix and classification report are above. The
  accuracy of Naïve Bayes is lesser when compared to SVM by a good margin and so are the precision and recall
  values. It can be observed that the naïve bayes algorithm performs worse on the minority classes and the majority
  class as well.
+ 
+ #### Limitations
+One of the main Limitations of performing sentimental Analysis on Amazon reviews is that Neutral Reviews won’t be able to contribute as it is neither a positive response nor negative response. And sometimes, some of the reviews might be labelled incorrectly i.e. review might be positive but ML algorithm might have detected it as a negative review. Also, the two columns that is review and rating might be giving opposite responses i.e. review might be negative but ratings might be 5 out of 5. Such data should be removed from the dataset but we have not consider this case. Even more problematically, most online review data is in English. For global organizations, successful reputation management requires monitoring media sources in many languages. In order to use sentiment analysis systems trained on English data exclusively, special steps must be taken that either involve costly translation of all relevant news articles and social media posts, or complex, state-of-the-art methods that allow the trained system to transfer what it has learned from one language to another.
+
+#### Conclusion and Future Work
+Future Work would be that we can make use of neutral reviews and can classify it into other two reviews i.e. either positive or negative reviews. Because it’s difficult to have a 3rd label which does not give much information about the data in the dataset. In conclusion, After getting the word cloud of positive and negative reviews, we can come to conclusion that Amazon can recommend HP to improve their products by the negative keywords mentioned in the word cloud i.e. All the 10 products can improve their update issues, slowly and with the help of positive keywords, they could recommend those products to those who are searching that kind of laptops. So, Amazon can work on Negative keywords to improve their product and can take positive keywords and recommend those products based on the search of the customers. Also, SVM and Naive Bayes Algorithm has been implemented and their results are compared to get better accuracy and precision. One of the main reason our accuracy is not high enough is because of less data we have in the dataset and the data imbalance. We tried resampling and different weighting techniques that we got from the feedbacks of the audience during the poster session. But that didn’t help too much.
