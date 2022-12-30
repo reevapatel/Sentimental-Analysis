@@ -23,4 +23,14 @@ In preprocessing, the reviews from the scraped dataset are cleaned with the help
 #### Word Cloud
 One is Positive reviews; another is negative reviews and last one is neutral reviews. We are taking positive and negative reviews into consideration. We have used word cloud generator to generate the word cloud of all the reviews. Negative Keywords are slow, screen, update issues, internet and Positive Keywords are Fast, battery life, screen time, battery life, keyboard.
 
-  
+#### Vectorization
+In the step of counting the word frequency, we will get the word frequency of all the words in the text. With the word frequency, we can use the word vector to represent the text. The vectorization method is easy to use and straightforward, but it is difficult to use in some scenarios such as the vocabulary after word segmentation is exceptionally large.
+
+#### Support Vector Machine (SVM) and Naive Bayes Algorithm
+-> Data is split into 70% for training 30% for testing. The training dataset is the sample dataset for learning, while the test dataset is the sample dataset for performance evaluation. The machine learning models implemented in this project are SVM and Naïve Bayes. The parameters of the algorithms were manually adjusted to achieve a better performance.
+-> After applying the SVM and Naive Bayes, we can get the results of each model. The accuracy of the SVM model is 86%
+-> The SVM model works better at predicting reviews with a positive sentiment. This difference can be observed from the above classification report where the recall for the labels ‘Negative’ and ‘Neutral’ is very less compared to ‘Positive.’ The reason is that the dataset is imbalanced with most of the comments as positive.
+->  The accuracy of the Naïve Bayes model is 78%; the confusion matrix and classification report are above. The
+ accuracy of Naïve Bayes is lesser when compared to SVM by a good margin and so are the precision and recall
+ values. It can be observed that the naïve bayes algorithm performs worse on the minority classes and the majority
+ class as well.
